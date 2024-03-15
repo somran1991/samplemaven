@@ -11,7 +11,7 @@ pipeline {
                   }
         }
 
-         stage("Checkout from SCM){
+         stage("Checkout from SCM"){
                  steps {
                       git branch: 'main', credentialsid: 'github', url: 'https://github.com/somran1991/samplemaven.git'
         }
