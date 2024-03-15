@@ -1,8 +1,8 @@
 pipeline {
     agent { label 'jenkins-agent' }
     tools {
-        jdk 'Java11'
-        maven 'maven3'
+        jdk 'Java1'
+        maven 'Maven1'
     }
     stages {
         stage("cleanup workspace") {
