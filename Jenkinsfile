@@ -4,28 +4,29 @@ pipeline {
         jdk 'java1'
         maven 'maven1'
     }
-    stages{
-        stage("cleanup workspace"){
-                  steps {
-                  cleanWs()
-                  }
+    stages {
+        stage("cleanup workspace") {
+            steps {
+                cleanWs()
+            }
         }
 
-        stage("Checkout from SCM"){
-                 steps {
-                      git branch: 'main', credentialsid: 'github', url: 'https://github.com/somran1991/samplemaven.git'
+        stage("Checkout from SCM") {
+            steps {
+                git branch: 'main', credentialsId: 'github', url: 'https://github.com/somran1991/samplemaven.git'
+            }
         }
 
-        stage("Build Application"){
-                steps {
-                     sh "mvn clean package"
-                }
-         }
+        stage("Build Application") {
+            steps {
+                sh "mvn clean package"
+            }
+        }
 
-        stage("Test Applicatiom"){
-                steps {
-                    sh "mvn test"
-                }
-         }
-      }
+        stage("Test Application") {
+            steps {
+                sh "mvn test"
+            }
+        }
+    }
 }
